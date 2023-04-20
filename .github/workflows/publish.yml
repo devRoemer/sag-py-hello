@@ -24,9 +24,8 @@ jobs:
         --wheel
         --outdir dist/
         .
-    - if: startsWith(github.ref, 'refs/tags')
-      uses: pypa/gh-action-pypi-publish@release/v1
+    - uses: pypa/gh-action-pypi-publish@release/v1
       with:
-        repository-url: https://pkgs.dev.azure.com/samhammer/AI-Team/_packaging/python-artifacts/pypi/simple
+        repository-url: https://pkgs.dev.azure.com/samhammer/AI-Team/_packaging/python-artifacts/pypi/upload
         user: __token__
         password: ${{ secrets.AZURE_DEVOPS_TOKEN }}
